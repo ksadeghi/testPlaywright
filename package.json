@@ -1,0 +1,30 @@
+
+{
+  "name": "testplaywright",
+  "version": "1.0.0",
+  "description": "A test project for Playwright automation testing",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:ui": "playwright test --ui",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "install-browsers": "playwright install"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "automation",
+    "e2e"
+  ],
+  "author": "openhands",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}
+
