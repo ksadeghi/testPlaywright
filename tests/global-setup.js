@@ -1,0 +1,19 @@
+
+
+
+// Global setup for Lambda Web Application tests
+async function globalSetup(config) {
+  console.log('🚀 Starting Lambda Web Application UI Tests');
+  console.log('📋 Test Configuration:');
+  console.log(`   - Base URL: ${config.use.baseURL}`);
+  console.log(`   - Browser Projects: ${config.projects.map(p => p.name).join(', ')}`);
+  console.log(`   - Test Files: ${config.testMatch}`);
+  console.log('⏳ Waiting for local server to start...');
+  
+  // Additional setup can be added here if needed
+  // For example, database setup, API mocking, etc.
+}
+
+module.exports = globalSetup;
+
+

@@ -9,8 +9,14 @@
     "test:headed": "playwright test --headed",
     "test:ui": "playwright test --ui",
     "test:debug": "playwright test --debug",
+    "test:lambda": "playwright test --config=playwright.config.lambda.js",
+    "test:lambda:headed": "playwright test --config=playwright.config.lambda.js --headed",
+    "test:lambda:ui": "playwright test --config=playwright.config.lambda.js --ui",
+    "test:lambda:debug": "playwright test --config=playwright.config.lambda.js --debug",
     "report": "playwright show-report",
-    "install-browsers": "playwright install"
+    "report:lambda": "playwright show-report lambda-test-results",
+    "install-browsers": "playwright install",
+    "start:lambda": "python3 local_server.py"
   },
   "keywords": [
     "playwright",
