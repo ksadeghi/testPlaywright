@@ -5,9 +5,9 @@
 async function globalSetup(config) {
   console.log('🚀 Starting Lambda Web Application UI Tests');
   console.log('📋 Test Configuration:');
-  console.log(`   - Base URL: ${config.use.baseURL}`);
-  console.log(`   - Browser Projects: ${config.projects.map(p => p.name).join(', ')}`);
-  console.log(`   - Test Files: ${config.testMatch}`);
+  console.log(`   - Base URL: ${config.use?.baseURL || 'http://localhost:8000'}`);
+  console.log(`   - Browser Projects: ${config.projects?.map(p => p.name).join(', ') || 'chromium, firefox, webkit'}`);
+  console.log(`   - Test Files: ${config.testMatch || '**/lambda-webapp.spec.js'}`);
   console.log('⏳ Waiting for local server to start...');
   
   // Additional setup can be added here if needed

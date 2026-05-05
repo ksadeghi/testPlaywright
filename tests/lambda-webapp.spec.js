@@ -94,7 +94,7 @@ test.describe('Lambda Web Application UI Tests', () => {
     await page.getByRole('button', { name: 'Submit' }).click();
     
     // Wait for navigation and verify Page 2
-    await page.waitForURL('**/page=2**');
+    await page.waitForURL(/page=2/);
     await expect(page.getByRole('heading', { name: 'Page 2' })).toBeVisible();
     
     // Step 5: Verify Page 2 state
@@ -113,7 +113,7 @@ test.describe('Lambda Web Application UI Tests', () => {
     await page.getByRole('button', { name: 'Submit' }).click();
     
     // Wait for navigation to error page
-    await page.waitForURL('**/page=error**');
+    await page.waitForURL(/page=error/);
     
     // Step 8: Validate error page content
     await expect(page.getByRole('heading', { name: '❌ Error' })).toBeVisible();
@@ -126,7 +126,7 @@ test.describe('Lambda Web Application UI Tests', () => {
     
     // Step 9: Return to Page 1
     await page.getByRole('link', { name: 'Back to Page 1' }).click();
-    await page.waitForURL('**/page=1**');
+    await page.waitForURL(/page=1/);
     await expect(page.getByRole('heading', { name: 'Page 1' })).toBeVisible();
   });
 
