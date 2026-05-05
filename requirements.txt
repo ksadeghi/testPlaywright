@@ -1,0 +1,4 @@
+# No external dependencies required for this Lambda function
+# The function uses only Python standard library modules:
+# - json (built-in)
+# - urllib.parse (built-in)
