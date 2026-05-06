@@ -5,9 +5,8 @@ test.describe('Lambda Web Application UI Tests', () => {
   let baseURL;
 
   test.beforeAll(async () => {
-    // You can set this to your Lambda function URL when deployed
-    // For local testing, we'll use localhost
-    baseURL = 'http://localhost:8000';
+    // Using deployed Lambda function URL
+    baseURL = 'https://rtszwly3sj2wgjrztrz6vaiz2m0vmysl.lambda-url.us-east-1.on.aws';
   });
 
   test('Scenario: Enter YES on Page 1, then NO on Page 2', async ({ page }) => {

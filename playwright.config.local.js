@@ -1,10 +1,11 @@
 
 
+
 // @ts-check
 const { defineConfig, devices } = require('@playwright/test');
 
 /**
- * Configuration specifically for Lambda Web Application UI Testing
+ * Configuration for LOCAL Lambda Web Application UI Testing
  * @see https://playwright.dev/docs/test-configuration
  */
 module.exports = defineConfig({
@@ -21,14 +22,14 @@ module.exports = defineConfig({
   workers: 1,
   /* Reporter to use */
   reporter: [
-    ['html', { outputFolder: 'lambda-test-results' }],
+    ['html', { outputFolder: 'lambda-test-results-local' }],
     ['list'],
-    ['json', { outputFile: 'lambda-test-results.json' }]
+    ['json', { outputFile: 'lambda-test-results-local.json' }]
   ],
   /* Shared settings for all the projects below */
   use: {
-    /* Base URL for Lambda web application */
-    baseURL: 'https://rtszwly3sj2wgjrztrz6vaiz2m0vmysl.lambda-url.us-east-1.on.aws',
+    /* Base URL for LOCAL Lambda web application */
+    baseURL: 'http://localhost:8000',
     
     /* Collect trace when retrying the failed test */
     trace: 'on-first-retry',
@@ -73,18 +74,18 @@ module.exports = defineConfig({
     },
   ],
 
-  /* Using deployed Lambda function - no local server needed */
-  // webServer: {
-  //   command: 'python3 local_server.py',
-  //   url: 'http://localhost:8000',
-  //   reuseExistingServer: !process.env.CI,
-  //   timeout: 120 * 1000, // 2 minutes
-  //   stdout: 'pipe',
-  //   stderr: 'pipe',
-  // },
+  /* Run your local Lambda server before starting the tests */
+  webServer: {
+    command: 'python3 local_server.py',
+    url: 'http://localhost:8000',
+    reuseExistingServer: !process.env.CI,
+    timeout: 120 * 1000, // 2 minutes
+    stdout: 'pipe',
+    stderr: 'pipe',
+  },
 
   /* Global setup and teardown */
-  globalSetup: require.resolve('./tests/global-setup.js'),
+  globalSetup: require.resolve('./tests/global-setup-local.js'),
   globalTeardown: require.resolve('./tests/global-teardown.js'),
 
   /* Output directories */
@@ -96,5 +97,6 @@ module.exports = defineConfig({
     timeout: 10000,
   },
 });
+
 
 

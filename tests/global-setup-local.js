@@ -1,19 +1,23 @@
 
 
 
-// Global setup for Lambda Web Application tests
+
+
+// Global setup for LOCAL Lambda Web Application tests
 async function globalSetup(config) {
-  console.log('🚀 Starting Lambda Web Application UI Tests');
+  console.log('🚀 Starting LOCAL Lambda Web Application UI Tests');
   console.log('📋 Test Configuration:');
-  console.log(`   - Base URL: ${config.use?.baseURL || 'https://rtszwly3sj2wgjrztrz6vaiz2m0vmysl.lambda-url.us-east-1.on.aws'}`);
+  console.log(`   - Base URL: ${config.use?.baseURL || 'http://localhost:8000'}`);
   console.log(`   - Browser Projects: ${config.projects?.map(p => p.name).join(', ') || 'chromium, firefox, webkit'}`);
   console.log(`   - Test Files: ${config.testMatch || '**/lambda-webapp.spec.js'}`);
-  console.log('🌐 Testing deployed Lambda function...');
+  console.log('⏳ Waiting for local server to start...');
   
   // Additional setup can be added here if needed
   // For example, database setup, API mocking, etc.
 }
 
 module.exports = globalSetup;
+
+
 
 

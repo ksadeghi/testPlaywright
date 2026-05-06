@@ -31,9 +31,9 @@ npx playwright install
 
 ### 2. Run Tests
 
-**Option A: Using npm scripts**
+**Option A: Test Deployed Lambda Function**
 ```bash
-# Run tests headless (default)
+# Run tests against deployed Lambda function (headless)
 npm run test:lambda
 
 # Run tests with browser UI visible
@@ -44,6 +44,21 @@ npm run test:lambda:ui
 
 # Run tests in debug mode
 npm run test:lambda:debug
+```
+
+**Option B: Test Local Development Server**
+```bash
+# Run tests against local server (headless)
+npm run test:lambda:local
+
+# Run tests with browser UI visible
+npm run test:lambda:local:headed
+
+# Run tests in Playwright UI mode (interactive)
+npm run test:lambda:local:ui
+
+# Run tests in debug mode
+npm run test:lambda:local:debug
 ```
 
 **Option B: Using the custom test runner**
@@ -63,11 +78,15 @@ node run-lambda-tests.js --ui
 
 ### 3. View Test Results
 ```bash
-# View HTML report
+# View HTML report for deployed Lambda tests
 npm run report:lambda
 
+# View HTML report for local tests
+npm run report:lambda:local
+
 # Or open directly
-open lambda-test-results/index.html
+open lambda-test-results/index.html          # Deployed tests
+open lambda-test-results-local/index.html    # Local tests
 ```
 
 ## Test Coverage

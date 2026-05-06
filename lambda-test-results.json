@@ -93,14 +93,7 @@
     "updateSourceMethod": "patch",
     "version": "1.59.1",
     "workers": 1,
-    "webServer": {
-      "command": "python3 local_server.py",
-      "url": "http://localhost:8000",
-      "reuseExistingServer": true,
-      "timeout": 120000,
-      "stdout": "pipe",
-      "stderr": "pipe"
-    }
+    "webServer": null
   },
   "suites": [
     {
@@ -132,12 +125,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 499,
+                      "duration": 605,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T00:21:59.372Z",
+                      "startTime": "2026-05-06T19:27:38.993Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -147,7 +140,7 @@
               ],
               "id": "38ad9f47d91ac0aec243-885a0ba7809f8d31b7d9",
               "file": "lambda-webapp.spec.js",
-              "line": 13,
+              "line": 12,
               "column": 3
             },
             {
@@ -166,12 +159,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1670,
+                      "duration": 1672,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T00:22:00.645Z",
+                      "startTime": "2026-05-06T19:27:40.375Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -181,7 +174,7 @@
               ],
               "id": "38ad9f47d91ac0aec243-9e6a85f317d72857c0b2",
               "file": "lambda-webapp.spec.js",
-              "line": 13,
+              "line": 12,
               "column": 3
             },
             {
@@ -200,12 +193,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 2338,
+                      "duration": 1366,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-05T00:22:04.192Z",
+                      "startTime": "2026-05-06T19:27:43.775Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -215,7 +208,7 @@
               ],
               "id": "38ad9f47d91ac0aec243-99a031101b08a84c7348",
               "file": "lambda-webapp.spec.js",
-              "line": 13,
+              "line": 12,
               "column": 3
             }
           ]
@@ -225,8 +218,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-05T00:21:57.683Z",
-    "duration": 9563.164,
+    "startTime": "2026-05-06T19:27:38.257Z",
+    "duration": 7067.726,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

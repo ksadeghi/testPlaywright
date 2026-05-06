@@ -13,8 +13,13 @@
     "test:lambda:headed": "playwright test --config=playwright.config.lambda.js --headed",
     "test:lambda:ui": "playwright test --config=playwright.config.lambda.js --ui",
     "test:lambda:debug": "playwright test --config=playwright.config.lambda.js --debug",
+    "test:lambda:local": "playwright test --config=playwright.config.local.js",
+    "test:lambda:local:headed": "playwright test --config=playwright.config.local.js --headed",
+    "test:lambda:local:ui": "playwright test --config=playwright.config.local.js --ui",
+    "test:lambda:local:debug": "playwright test --config=playwright.config.local.js --debug",
     "report": "playwright show-report",
     "report:lambda": "playwright show-report lambda-test-results",
+    "report:lambda:local": "playwright show-report lambda-test-results-local",
     "install-browsers": "playwright install",
     "start:lambda": "python3 local_server.py"
   },
