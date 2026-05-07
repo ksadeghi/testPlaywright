@@ -110,7 +110,7 @@
           "column": 6,
           "specs": [
             {
-              "title": "Scenario: Enter YES on Page 1, then NO on Page 2",
+              "title": "Button highlighting validation: YES highlights Page 2 button, NO goes to error",
               "ok": true,
               "tags": [],
               "tests": [
@@ -125,12 +125,12 @@
                       "workerIndex": 0,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 605,
+                      "duration": 1512,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-06T19:27:38.993Z",
+                      "startTime": "2026-05-07T00:06:10.061Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -138,13 +138,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "38ad9f47d91ac0aec243-885a0ba7809f8d31b7d9",
+              "id": "38ad9f47d91ac0aec243-b6278d2edecf5c2d35de",
               "file": "lambda-webapp.spec.js",
-              "line": 12,
+              "line": 195,
               "column": 3
             },
             {
-              "title": "Scenario: Enter YES on Page 1, then NO on Page 2",
+              "title": "Button highlighting validation: YES highlights Page 2 button, NO goes to error",
               "ok": true,
               "tags": [],
               "tests": [
@@ -159,12 +159,12 @@
                       "workerIndex": 1,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1672,
+                      "duration": 2156,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-06T19:27:40.375Z",
+                      "startTime": "2026-05-07T00:06:12.366Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -172,13 +172,13 @@
                   "status": "expected"
                 }
               ],
-              "id": "38ad9f47d91ac0aec243-9e6a85f317d72857c0b2",
+              "id": "38ad9f47d91ac0aec243-51d3926262976ab5f9ec",
               "file": "lambda-webapp.spec.js",
-              "line": 12,
+              "line": 195,
               "column": 3
             },
             {
-              "title": "Scenario: Enter YES on Page 1, then NO on Page 2",
+              "title": "Button highlighting validation: YES highlights Page 2 button, NO goes to error",
               "ok": true,
               "tags": [],
               "tests": [
@@ -193,12 +193,12 @@
                       "workerIndex": 2,
                       "parallelIndex": 0,
                       "status": "passed",
-                      "duration": 1366,
+                      "duration": 2585,
                       "errors": [],
                       "stdout": [],
                       "stderr": [],
                       "retry": 0,
-                      "startTime": "2026-05-06T19:27:43.775Z",
+                      "startTime": "2026-05-07T00:06:16.265Z",
                       "annotations": [],
                       "attachments": []
                     }
@@ -206,9 +206,9 @@
                   "status": "expected"
                 }
               ],
-              "id": "38ad9f47d91ac0aec243-99a031101b08a84c7348",
+              "id": "38ad9f47d91ac0aec243-a0c1b3d0a7a730f6ea93",
               "file": "lambda-webapp.spec.js",
-              "line": 12,
+              "line": 195,
               "column": 3
             }
           ]
@@ -218,8 +218,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2026-05-06T19:27:38.257Z",
-    "duration": 7067.726,
+    "startTime": "2026-05-07T00:06:09.282Z",
+    "duration": 9752.385,
     "expected": 3,
     "skipped": 0,
     "unexpected": 0,

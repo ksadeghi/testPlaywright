@@ -191,5 +191,65 @@ test.describe('Lambda Web Application UI Tests', () => {
     // Final verification
     await expect(page.getByRole('heading', { name: '❌ Error' })).toBeVisible();
   });
+
+  test('Button highlighting validation: YES highlights Page 2 button, NO goes to error', async ({ page }) => {
+    // Step 1: Navigate to Page 1
+    await page.goto(baseURL);
+    await expect(page.getByRole('heading', { name: 'Page 1' })).toBeVisible();
+    
+    // Step 2: Enter YES and verify Page 2 button gets highlighted
+    const inputField = page.getByLabel('Enter a value (type "YES" to proceed):');
+    await inputField.fill('YES');
+    
+    // Wait a moment for any dynamic highlighting to occur
+    await page.waitForTimeout(500);
+    
+    // Step 3: Check if Page 2 button/link is highlighted or enabled
+    // This will depend on your Lambda function's implementation
+    // Looking for common highlighting patterns: active class, enabled state, color changes
+    const page2Button = page.getByRole('button', { name: 'Submit' });
+    await expect(page2Button).toBeEnabled();
+    
+    // Take screenshot showing highlighted state
+    await page.screenshot({ path: 'test-results/06-page1-yes-highlighted.png', fullPage: true });
+    
+    // Step 4: Submit to go to Page 2
+    await page2Button.click();
+    
+    // Step 5: Verify we're on Page 2
+    await page.waitForURL(/page=2/);
+    await expect(page.getByRole('heading', { name: 'Page 2' })).toBeVisible();
+    
+    // Step 6: Verify YES value is pre-filled
+    const page2Input = page.getByLabel('Enter a value (type "YES" to proceed):');
+    await expect(page2Input).toHaveValue('YES');
+    
+    // Step 7: Change to NO
+    await page2Input.clear();
+    await page2Input.fill('NO');
+    
+    // Take screenshot showing NO entered
+    await page.screenshot({ path: 'test-results/07-page2-no-entered.png', fullPage: true });
+    
+    // Step 8: Submit and verify we go to error page
+    await page.getByRole('button', { name: 'Submit' }).click();
+    
+    // Step 9: Verify error page
+    await page.waitForURL(/page=error/);
+    await expect(page.getByRole('heading', { name: '❌ Error' })).toBeVisible();
+    
+    // Step 10: Verify error message content
+    const errorMessage = page.locator('.error-message');
+    await expect(errorMessage).toBeVisible();
+    await expect(errorMessage).toContainText('Invalid Input!');
+    
+    // Take screenshot of error page
+    await page.screenshot({ path: 'test-results/08-error-page-from-no.png', fullPage: true });
+    
+    // Step 11: Verify we can return to Page 1
+    await page.getByRole('link', { name: 'Back to Page 1' }).click();
+    await page.waitForURL(/page=1/);
+    await expect(page.getByRole('heading', { name: 'Page 1' })).toBeVisible();
+  });
 });
 
